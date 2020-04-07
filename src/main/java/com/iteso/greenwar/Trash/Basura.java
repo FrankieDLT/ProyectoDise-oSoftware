@@ -7,6 +7,7 @@ package com.iteso.greenwar.score;
 public class Basura{
     private String name;
     private String clasification;
+    private String clas;
 
     public String getName() {
         return name;
@@ -22,5 +23,13 @@ public class Basura{
 
     public void setClasification(String newcla) {
         this.clasification = newcla;
+    }
+
+    public String getClas() {
+        return clas;
+    }
+
+    public void setClas(String neuclas) {
+        this.clas = neuclas;
     }
 }

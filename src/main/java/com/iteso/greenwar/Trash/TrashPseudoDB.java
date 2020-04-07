@@ -1,4 +1,9 @@
-package com.iteso.greenwar.score;
+package com.iteso.greenwar.Trash;
+import com.iteso.greenwar.score.Basura;
+import org.junit.Test;
+
+import java.util.Random;
+
 /**
  * This class will act as a database of sorts from which an object type "Basura"
  * will be drawn to be played with
@@ -6,7 +11,8 @@ package com.iteso.greenwar.score;
  * @version 06/04/2020/1.0
  * */
 
-import java.util.Random;
+
+
 /*
 *
 * básico      -> organico, inorganico
@@ -22,16 +28,16 @@ import java.util.Random;
 public class TrashPseudoDB{
 
     private Random Ra = new Random();
-    int ran;
+    int ran=0;
 
     /**
      * This method recieves a object and changes its name and its type to a certain one depending
      * on the type of trash selected by a random number
      *@author FrankDLT
      *@version 06/04/2020/1.0
-     * */
+     * @return*/
     public Basura SelectB(Basura b){
-        
+
         ran = Ra.nextInt(200);
 
         switch (ran){
@@ -236,18 +242,19 @@ public class TrashPseudoDB{
             case 198: b.setName("Dulce Añejo"); b.setClasification("O");break;
             case 199: b.setName("Botón de Camisa"); b.setClasification("PL");break;
             case 200: b.setName("Alfiletero"); b.setClasification("T");break;
-            default:
+            default:b.setName("ERROR"); b.setClasification("E");break;
         }
 
+        return b;
     }
 
-    /*
+
     @Test
-    private Void TestRandom(){
-        Basura Test = SelectB(new Basura);
-        print(Test);
+    public void TestRandom(){
+        Basura Test = SelectB(new Basura());
+        System.out.println(Test.toString());
     }
-    */
-     */
+
+
 
 }
