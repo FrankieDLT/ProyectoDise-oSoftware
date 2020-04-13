@@ -1,7 +1,6 @@
 package com.iteso.greenwar.Trash;
 
-import com.iteso.greenwar.score.Basura;
-
+import com.iteso.greenwar.Trash.Basura;
 /**
  * This class defines the structure of the diferent types dificulty.
  * @author FrankDLT
@@ -11,6 +10,5 @@ public abstract class Dificulty{
 
     public abstract void SetClass(Basura b);
 
-    ;
 
 }

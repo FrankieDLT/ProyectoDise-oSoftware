@@ -14,16 +14,19 @@ import java.util.Random;
 
 
 /*
-*
 * básico      -> organico, inorganico
 * intermedio  -> reciclable, organico, inorganico
 *
-* avanzado    -> Orgánico, Papel, Vidrio, Metal,
-*                Plástico, Textiles y Basura tecnológica
+* reciclable: Metal, Vidrio, Papel
+*
+* avanzado    -> Orgánico, Papel (P), Vidrio, Metal,
+*                Plástico (PL), Textiles y Basura tecnológica (B)
 *
 * nota: carton se clasifica como papel
 *
 * añadir opcion de información en el menu pricipal
+*
+* Streak Points: (1.25^Streak)*points
 * */
 public class TrashPseudoDB{
 
@@ -252,7 +255,8 @@ public class TrashPseudoDB{
     @Test
     public void TestRandom(){
         Basura Test = SelectB(new Basura());
-        System.out.println(Test.toString());
+        System.out.println("Name: " + Test.getName()
+                + "\nClass: "+Test.getClasification());
     }
 
 

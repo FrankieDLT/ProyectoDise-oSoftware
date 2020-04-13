@@ -10,15 +10,15 @@ public class StartCurrentGame {
         switch (selectionNumber) {
             case 0:
                 return littleQuiz;
-                break;
+                //break; UNREACHABLE
             case 1:
                 return middleQuiz;
-            break;
+            //break; UNREACHABLE
             case 2:
                 return bigQuiz;
-            break;
+            //break; UNREACHABLE
             default:
-                return null;
+                return 0;
         }
     }
 }

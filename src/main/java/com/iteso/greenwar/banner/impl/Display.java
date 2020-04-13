@@ -22,13 +22,14 @@ public class Display implements Subject {
         this.observers = new ArrayList();
     }
 
-    void startRegisterRecords(Observer observer){
+    public void startRegisterRecords(Observer observer){
         observers.add(observer);
     }
-    void finishRegisterRecords(Observer observer){
+
+    public void finishRegisterRecords(Observer observer){
 
     }
-    void notifyRegisterRecords(){
+    public void notifyRegisterRecords(){
         for(Object observer1 : observers){
             Observer observer = (Observer) observer1;
             observer.scoreUpdate(this.turnIs, this.totalTurnsAre, this.markIs, this.isHit);
