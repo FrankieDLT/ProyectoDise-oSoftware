@@ -3,7 +3,7 @@ package com.iteso.greenwar.Trash;
 import com.iteso.greenwar.score.Basura;
 
 /**
- * This class defines the structure of the diferent types dificulty
+ * This class defines the structure of the diferent types dificulty.
  * @author FrankDLT
  * @version 06/04/2020/1.0
  * */

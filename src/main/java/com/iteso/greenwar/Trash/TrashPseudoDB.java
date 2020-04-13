@@ -1,11 +1,11 @@
 package com.iteso.greenwar.Trash;
-import com.iteso.greenwar.score.Basura;
+import com.iteso.greenwar.Trash.Basura;
 import org.junit.Test;
 
 import java.util.Random;
 
 /**
- * This class will act as a database of sorts from which an object type "Basura"
+ * This class will act as a database of sorts from which an object type "Basura".
  * will be drawn to be played with
  * @author FrankDLT
  * @version 06/04/2020/1.0
