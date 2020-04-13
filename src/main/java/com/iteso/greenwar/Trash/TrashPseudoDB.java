@@ -1,5 +1,8 @@
 package com.iteso.greenwar.Trash;
 import com.iteso.greenwar.Trash.Basura;
+import com.iteso.greenwar.Trash.Impl.DifBasica;
+import com.iteso.greenwar.Trash.Impl.DifMedia;
+import com.iteso.greenwar.Trash.Impl.Difalta;
 import org.junit.Test;
 
 import java.util.Random;
@@ -259,6 +262,34 @@ public class TrashPseudoDB{
                 + "\nClass: "+Test.getClasification());
     }
 
+    @Test
+    public void TestLoDif(){
+        Basura Test = SelectB(new Basura());
+        Dificulty Dif = new DifBasica();
+        Dif.SetClass(Test);
+        System.out.println("Name: " + Test.getName()
+                + "\nClass: "+Test.getClasification()
+                + "\nType: "+Test.getClas());
+    }
 
+    @Test
+    public void TestMedDif(){
+        Basura Test = SelectB(new Basura());
+        Dificulty Dif = new DifMedia();
+        Dif.SetClass(Test);
+        System.out.println("Name: " + Test.getName()
+                + "\nClass: "+Test.getClasification()
+                + "\nType: "+Test.getClas());
+    }
+
+    @Test
+    public void TestHiDif(){
+        Basura Test = SelectB(new Basura());
+        Dificulty Dif = new Difalta();
+        Dif.SetClass(Test);
+        System.out.println("Name: " + Test.getName()
+                + "\nClass: "+Test.getClasification()
+                + "\nType: "+Test.getClas());
+    }
 
 }
