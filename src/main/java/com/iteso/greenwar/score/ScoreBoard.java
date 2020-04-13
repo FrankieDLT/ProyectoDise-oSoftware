@@ -16,11 +16,11 @@ public abstract class ScoreBoard {
     public void clearCurrentGameScore() {  questionsCurrentGame.clear();  }
 
     public void currentScore() {
-
+        //Aqui la voy a utilizar para poner hacer un banner de resultados(observer pattern) y mostrarlo
     }
 
     public void finalScore() {
-
+        //Aqui voy a implementar una vez que termine la partida que guarde en un archivo de txt los resultados
     }
 
 }

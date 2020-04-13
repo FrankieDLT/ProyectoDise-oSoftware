@@ -1,4 +1,5 @@
 package com.iteso.greenwar.Trash.Impl;
+import com.iteso.greenwar.Trash.Basura;
 import com.iteso.greenwar.Trash.Dificulty;
 import com.iteso.greenwar.score.Basura;
 /**

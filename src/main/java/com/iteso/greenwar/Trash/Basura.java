@@ -1,6 +1,6 @@
-package com.iteso.greenwar.score;
+package com.iteso.greenwar.Trash;
 /**
- * This class defines the atributes of the object "Basura"
+ * This class defines the atributes of the object "Basura".
  * @author FrankDLT
  * @version 06/04/2020/1.0
  * */
