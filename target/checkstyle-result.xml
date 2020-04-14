@@ -52,16 +52,7 @@
 <error line="40" column="64" severity="error" message="El parámetro hit debería ser final." source="com.puppycrawl.tools.checkstyle.checks.FinalParametersCheck"/>
 <error line="67" severity="error" message="La línea es mayor de 80 caracteres (encontrado 84)." source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
 </file>
-<file name="C:\Users\DELL\Documents\DiseñoDeSoftware\Git\ProyectoDise-oSoftware\src\main\java\com\iteso\greenwar\banner\Observer.java">
-<error line="1" severity="error" message="Falta el archivo package-info.java." source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocPackageCheck"/>
-<error line="4" severity="error" message="La línea es mayor de 80 caracteres (encontrado 87)." source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
-<error line="10" column="5" severity="error" message="Falta el comentario Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocMethodCheck"/>
-</file>
 <file name="C:\Users\DELL\Documents\DiseñoDeSoftware\Git\ProyectoDise-oSoftware\src\main\java\com\iteso\greenwar\banner\Subject.java">
-<error line="4" severity="error" message="La línea es mayor de 80 caracteres (encontrado 87)." source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
-<error line="10" column="5" severity="error" message="Falta el comentario Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocMethodCheck"/>
-<error line="11" column="5" severity="error" message="Falta el comentario Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocMethodCheck"/>
-<error line="12" column="5" severity="error" message="Falta el comentario Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocMethodCheck"/>
 </file>
 <file name="C:\Users\DELL\Documents\DiseñoDeSoftware\Git\ProyectoDise-oSoftware\src\main\java\com\iteso\greenwar\score\CurrentQuestion.java">
 <error line="1" severity="error" message="Falta el archivo package-info.java." source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocPackageCheck"/>
@@ -119,8 +110,6 @@
 <error line="19" severity="error" message="La línea es mayor de 80 caracteres (encontrado 103)." source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
 <error line="22" column="5" severity="error" message="Falta el comentario Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocMethodCheck"/>
 <error line="23" severity="error" message="La línea es mayor de 80 caracteres (encontrado 110)." source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
-</file>
-<file name="C:\Users\DELL\Documents\DiseñoDeSoftware\Git\ProyectoDise-oSoftware\src\main\java\com\iteso\greenwar\StartGame.java">
 </file>
 <file name="C:\Users\DELL\Documents\DiseñoDeSoftware\Git\ProyectoDise-oSoftware\src\main\java\com\iteso\greenwar\Trash\TrashPseudoDB.java">
 <error line="61" column="5" severity="error" message="El tamaño del método es 413 líneas (máximas permitidas 150)." source="com.puppycrawl.tools.checkstyle.checks.sizes.MethodLengthCheck"/>

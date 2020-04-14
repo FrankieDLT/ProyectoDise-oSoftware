@@ -25,8 +25,8 @@ under the License.
     <language>en-us</language>
     <copyright>&#169;2020</copyright>
     <item>
-      <title>File: 10,
-             Errors: 304,
+      <title>File: 8,
+             Errors: 297,
              Warnings: 0,
              Infos: 0
       </title>
@@ -74,20 +74,6 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="http://maven.apache.org/checkstyle.html#com.iteso.greenwar.StartGame.java">com/iteso/greenwar/StartGame.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-              </tr>
-                          <tr>
-                <td>
                   <a href="http://maven.apache.org/checkstyle.html#com.iteso.greenwar.score.Player.java">com/iteso/greenwar/score/Player.java</a>
                 </td>
                 <td>
@@ -130,20 +116,6 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="http://maven.apache.org/checkstyle.html#com.iteso.greenwar.banner.Observer.java">com/iteso/greenwar/banner/Observer.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  3
-                </td>
-              </tr>
-                          <tr>
-                <td>
                   <a href="http://maven.apache.org/checkstyle.html#com.iteso.greenwar.banner.Subject.java">com/iteso/greenwar/banner/Subject.java</a>
                 </td>
                 <td>
@@ -153,7 +125,7 @@ under the License.
                   0
                 </td>
                 <td>
-                  4
+                  0
                 </td>
               </tr>
                           <tr>
