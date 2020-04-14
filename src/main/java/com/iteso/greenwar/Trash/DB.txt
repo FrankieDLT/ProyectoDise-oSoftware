@@ -1,0 +1,201 @@
+Funko Roto|PL
+Bateria de Laptop|B
+Sobras de Comida|O
+Clips de Oficina|M
+Colcha Deshilachada|T
+Disco DVD|B
+Cuaderno Usado|P
+Servilleta Normal|P
+Servilleta Tejida|T
+Control de Nintendo|B
+Termo de Cafe|M
+Cascara de Huevo|O
+Cascara de Platano|O
+Huesos de Pollo|O
+Peluche Roto|T
+Calcetines con Hoyos|T
+Cuchillo sin Filo|M
+Lentes de Sol sin Cristales|M
+Botella de Agua|PL
+Anillo de Compromiso (ouch!)|M
+VHS|B
+Cadena de Collar|M
+Marcapasos|B
+Pedazos de Ventana|V
+Jarra de Cafetera|V
+Tijeras|M
+Camisa Rota|T
+Zapatos|T
+Defensa de Carro|M
+Foco Fundido|V
+Carta Leida|P
+Pañuelo Usado|P
+Guantes|T
+Termo Infantil|PL
+Envoltorio de Dulce|PL
+Hebilla de Pantalon|M
+Muñeco de Batman sin Cabeza|PL
+Control Remoto|B
+Fotos Familiares|P
+Cartucho de Nintendo 64|B
+Funda de Celular|PL
+USB|B
+Guía del autoestopista galáctico (libro)|P
+Sandalias|PL
+Bolo de Boliche|PL
+Pelota de Baloncesto|PL
+Casco de Constructor|PL
+Calaverita de Azucar|O
+Pan de Muerto Viejo|O
+Pluma sin Tinta|PL
+Boligrafo Sin Tinta|M
+Botella de Vino|V
+Corbata Fea|T
+Poster Viejo|P
+Toper Manchado|PL
+Caja de Galletas|P
+Blue Ray Descompuesta|B
+Cubre Bolante|T
+Hojas de Arbol|O
+Cable HDMI|B
+Restos de Café|O
+Pétalos de Flores|O
+Adorno de Cristal|V
+Pantalla de TV de los 70s|V
+Pantalla de TV del 2020|PL
+Juguete Amiibo|PL
+Vaso de Precipitado|V
+Gotero|V
+Retrovisor Roto|V
+Lata de Comida|M
+Tenedor Doblado|M
+Cubo Rubik|PL
+Guitarra sin Cuerdas|O
+Violín Roto|O
+Coca de Lata|M
+Pieza de Parabrisas|V
+Celular|B
+Computadora con Windows Vista|B
+Placa de Perro|M
+Tiara de Juguete|PL
+Pistola de Juguete|PL
+Cerdas de Escoba|PL
+Mango de Cuchillo de Cocina Barato|PL
+Hueso de Mango|O
+Cristal de Lente de Camara|V
+Camara Digital|B
+Mouse|B
+Estampilla|P
+Manual de Uso|P
+Legos|PL
+Bola Disco|V
+Corazón de Manzana|O
+Envase de Jugo|PL
+Mapa de Calles|P
+Recetario|P
+Licuadora|B
+Tostadora|B
+Regla de Aluminio|M
+Lienzo|T
+Acetato Roto|PL
+Pantalón de Mezclilla|T
+Botella de Shampoo|PL
+Toalla Vieja|T
+Ropa Interior|T
+Cartas de Pokemon|P
+Funda de Almohada|T
+Trapo Viejo|T
+Estopa|T
+Sueter|T
+Paleacate|T
+Palo de Paleta|O
+Bolsa del Mandado|PL
+Micro Fibra para Lentes|T
+Boleto de Avión Viejo|P
+Dados|PL
+Candelabro|V
+Espejo|V
+Florero|V
+Bolsa de Papitas|PL
+Heces de Animal|O
+Animal Atropellado|O
+Llanta de Carro|PL
+Puerta de Acero Torcida|M
+Cesta de Basura de Aluminio|M
+Tuercas|M
+Clavos|M
+Desarmador|M
+Martillo|M
+Residuo de Café|O
+Queso Rancio|O
+Fruta Hechada a Perder|O
+Tuvo de Escape|M
+Gato Hidráulico|M
+Bateria de Celular|B
+Disco Duro|B
+Nintendo GameBoy|B
+Calabaza de Halloween|O
+Uñas|O
+Cabello|O
+Gasas|O
+Residuos de Pasto|O
+Bolsa de Té|O
+Paja|O
+Cenizas|O
+Yerba de Mate|O
+Cáscara de Nuez|O
+Raíces|O
+Madera|O
+Cascara de Naranja|O
+Huesos de Pescado|O
+Pepinillos|O
+Radio|B
+Carton de Huevos|P
+Carton de Leche|P
+Recibo de la Luz Viejo|P
+Carpeta|P
+Triptico|P
+Cajita Feliz|P
+Examen de Primer Semestre|P
+Cartulina|P
+Audífonos|B
+Aire Acondicionado Descompuesto|B
+Control de Wii|B
+Ipad|B
+Guia Televisiva|P
+Tarjeta RAM|B
+Comic Viejo|P
+Moneda de 10 Centavos|M
+Reloj de Bolsillo|M
+Stickers|P
+Barra Desodorante Vacia|PL
+Brazalete|T
+Cubo de Cargador|B
+Lata de Aerosol|M
+Caja de Unicel|PL
+Pan|O
+Periodico|P
+Cartera de Cuero|O
+Cartucho de Tinta|B
+Semillas|O
+Aserrín|O
+Chicle|PL
+Tarjeta de Crédito|PL
+Chaleco|T
+Bufanda|T
+Bolsa de Mano|T
+Mascarilla|T
+Bisturi|M
+Guantes Medicos|PL
+Pluma de Pajaro|O
+Caparazon de Cangrejo|O
+Alfombra Manchada|T
+Morral Viejo|T
+Mochila Rota|T
+Gancho Barato|PL
+Aguja|M
+Portaretratos de Aluminio|M
+Cinta Métrica|PL
+Dulce Añejo|O
+Botón de Camisa|PL
+Alfiletero|T

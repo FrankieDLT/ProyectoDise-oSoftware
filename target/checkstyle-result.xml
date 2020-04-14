@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <checkstyle version="8.19">
-<file name="C:\Users\DELL\Documents\DiseñoDeSoftware\Git\ProyectoDise-oSoftware\src\main\java\com\iteso\greenwar\score\impl\Score.java">
+<file name="C:\Users\DELL\Documents\DiseñoDeSoftware\Git\ProyectoDise-oSoftware\src\main\java\com\iteso\greenwar\Trash\DBAnalisis.java">
 </file>
 <file name="C:\Users\DELL\Documents\DiseñoDeSoftware\Git\ProyectoDise-oSoftware\src\main\java\com\iteso\greenwar\Trash\TrashPseudoDB.java">
 <error line="61" column="5" severity="error" message="El tamaño del método es 413 líneas (máximas permitidas 150)." source="com.puppycrawl.tools.checkstyle.checks.sizes.MethodLengthCheck"/>
