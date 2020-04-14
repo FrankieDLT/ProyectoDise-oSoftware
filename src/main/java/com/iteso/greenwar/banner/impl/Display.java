@@ -6,37 +6,98 @@ import com.iteso.greenwar.banner.Subject;
 import java.util.ArrayList;
 
 /**
- * This abstract class is implementing the Singleton pattern for managing game results.
+ * This abstract class is implementing the
+ * Singleton pattern for managing game results.
  * Created with IntelliJ IDEA.
  * @author: jortiz
  * @version: 09/04/2020/1.0
  */
 public class Display implements Subject {
+    /**
+     * List of Observers.
+     * @author: jortiz
+     * @version: 14/04/2020/1.0
+     */
     private final ArrayList observers;
+    /**
+     * Current Turn.
+     * @author: jortiz
+     * @version: 14/04/2020/1.0
+     */
     private int turnIs;
+    /**
+     * Maximun amount of turns.
+     * @author: jortiz
+     * @version: 14/04/2020/1.0
+     */
     private int totalTurnsAre;
+    /**
+     * Turn mean.
+     * @author: jortiz
+     * @version: 14/04/2020/1.0
+     */
     private float markIs;
+    /**
+     * Boolean for the correct answer.
+     * @author: jortiz
+     * @version: 14/04/2020/1.0
+     */
     private boolean isHit;
 
+    /**
+     * Show the list to the observers.
+     * @author: jortiz
+     * @version: 14/04/2020/1.0
+     */
     public Display() {
         this.observers = new ArrayList();
     }
 
-    void startRegisterRecords(Observer observer){
+    /**
+     * Method used to registed new highest scores.
+     * @author: jortiz
+     * @version: 14/04/2020/1.0
+     * @param observer Oberver for this action
+     */
+    public void startRegisterRecords(final Observer observer) {
+
         observers.add(observer);
     }
-    void finishRegisterRecords(Observer observer){
+
+    /**
+     * Method to record new highest scores.
+     * @author: jortiz
+     * @version: 14/04/2020/1.0
+     * @param observer Oberver for this action
+     */
+    public void finishRegisterRecords(final Observer observer) {
 
     }
-    void notifyRegisterRecords(){
-        for(Object observer1 : observers){
+    /**
+     * Method that notifies about newly registered.
+     * @author: jortiz
+     * @version: 14/04/2020/1.0
+     */
+    public void notifyRegisterRecords() {
+        for (Object observer1 : observers) {
             Observer observer = (Observer) observer1;
-            observer.scoreUpdate(this.turnIs, this.totalTurnsAre, this.markIs, this.isHit);
+            observer.scoreUpdate(this.turnIs,
+                    this.totalTurnsAre, this.markIs, this.isHit);
 
         }
 
     }
-    public void setScore(int turn, int totalTurns, float mark, boolean hit) {
+    /**
+     * Method that updates the score.
+     * @author: jortiz
+     * @version: 14/04/2020/1.0
+     * @param turn Current turn
+     * @param totalTurns maximun amount of turns
+     * @param mark score
+     * @param hit correct or not
+     */
+    public void setScore(final int turn, final int totalTurns,
+                         final float mark, final boolean hit) {
         this.turnIs = turn;
         this.totalTurnsAre = totalTurns;
         this.markIs = mark;
@@ -63,7 +124,8 @@ public class Display implements Subject {
  public void notifyObservers() {
  for (Object observer1 : observers) {
  Observer observer = (Observer) observer1;
- observer.scoreUpdate(this.homeTeam, this.awayTeam, this.homeGoals, this.awayGoals);
+ observer.scoreUpdate(this.homeTeam, this.awayTeam,
+ this.homeGoals, this.awayGoals);
  }
  }
 
