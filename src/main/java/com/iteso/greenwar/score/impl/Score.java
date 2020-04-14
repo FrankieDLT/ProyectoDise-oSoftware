@@ -11,23 +11,46 @@ import java.util.ArrayList;
  * @author: jortiz
  * @version: 05/04/2020/1.0
  */
-public class Score extends ScoreBoard {
+public final class Score extends ScoreBoard {
 
+    /**
+     * Variable for the scoreboard.
+     * @author: jortiz
+     * @version: 14/04/2020/1.0
+     */
     private static ScoreBoard uniqueInstance;
 
-    private Score(){
-        questionsCurrentGame = new ArrayList();
-        player = new Player();
+    /**
+     * Method to initialize the player and questions.
+     * @author: jortiz
+     * @version: 14/04/2020/1.0
+     */
+    private  Score() {
+        super.setQuestionsCurrentGame(
+                new ArrayList()); //questionsCurrentGame
+        super.setPlayer(new Player()); //player
     }
 
-    public static ScoreBoard getInstance(){
-        if(uniqueInstance==null){
+    /**
+     * Method to create new scoreboard.
+     * @author: jortiz
+     * @version: 14/04/2020/1.0
+     * @return the game instance
+     */
+    public static ScoreBoard getInstance() {
+        if (uniqueInstance == null) {
             uniqueInstance = new Score();
         }
         return uniqueInstance;
     }
 
-    public static void clearCurrentGame(){
+    /**
+     * Method to clear thecurrent game.
+     * @author: jortiz
+     * @version: 14/04/2020/1.0
+     */
+    public static void clearCurrentGame() {
+
         uniqueInstance = null;
     }
 }
