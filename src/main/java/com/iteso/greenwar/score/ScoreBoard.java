@@ -46,7 +46,7 @@ public abstract class ScoreBoard {
      * @author: jortiz
      * @version: 14/04/2020/1.0
      */
-    public void currentScore(int chooseQuiz, String answer) {
+    public void currentScore(int chooseQuiz) {
 
         Display display = new  Display();
         BannerSimpleObserver bannerSimpleObserver = new BannerSimpleObserver();
@@ -57,7 +57,7 @@ public abstract class ScoreBoard {
         for (int i=0;i < questionsCurrentGame.size();i++){
             cQ = (CurrentQuestion) questionsCurrentGame.get(i);
             System.out.println("\tPorcentajes del juego:");
-
+            display.setScore(i++,chooseQuiz,(float)0.0,cQ.isHit());
 
         }
     }
