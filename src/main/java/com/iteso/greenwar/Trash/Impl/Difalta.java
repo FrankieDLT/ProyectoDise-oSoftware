@@ -35,19 +35,6 @@ public class Difalta extends Dificulty {
 
     }
 
-    /**
-     * Metodo para probar la asignación.
-     * @author Francisco De La Torre
-     * */
-    @Test
-    public void testAlt() {
-        Basura test = new Basura();
-        Dificulty dif = new Difalta();
-        test.setClasification("O");
-        dif.setClass(test);
 
-        System.out.println(test.getClas());
-
-    }
 
 }
