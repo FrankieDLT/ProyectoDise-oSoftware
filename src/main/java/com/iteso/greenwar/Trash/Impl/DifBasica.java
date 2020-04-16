@@ -29,19 +29,6 @@ public class DifBasica extends Dificulty {
     }
 
 
-    /**
-     * Metodo para probar la asignación.
-     * @author Francisco De La Torre
-     * */
-    @Test
-    public void testBasic() {
-        Basura test = new Basura();
-        Dificulty dif = new DifBasica();
-        test.setClasification("O");
-        dif.setClass(test);
 
-        System.out.println(test.getClas());
-
-    }
 
 }

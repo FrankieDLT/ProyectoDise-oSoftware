@@ -139,70 +139,7 @@ public class DBAnalisis {
 
     }
 
-    /**
-     * Metodo para probar los valores aleatorios.
-     * @author Francisco De La Torre
-     * @throws IOException Error en
-     *      caso de no leer el archivo
-     * */
 
-    @Test
-    public void testH() throws IOException {
-        Basura test = selectB(new Basura());
-        System.out.println("Name: " + test.getName()
-                + "\nClass: " + test.getClasification());
-    }
-
-    /**
-     * Metodo para probar la asignación
-     * aleatoria con baja dificultad.
-     * @author Francisco De La Torre
-     * @throws IOException Error en
-     *          caso de no leer el archivo
-     * */
-    @Test
-    public void testLoDif() throws IOException {
-        Basura test = selectB(new Basura());
-        Dificulty dif = new DifBasica();
-        dif.setClass(test);
-        System.out.println("Name: " + test.getName()
-                + "\nClass: " + test.getClasification()
-                + "\nType: " + test.getClas());
-    }
-
-    /**
-     * Metodo para probar la asignación
-     * aleatoria con media dificultad.
-     * @author Francisco De La Torre
-     * @throws IOException Error en
-     *         caso de no leer el archivo
-     * */
-    @Test
-    public void testMedDif() throws IOException {
-        Basura test = selectB(new Basura());
-        Dificulty dif = new DifMedia();
-        dif.setClass(test);
-        System.out.println("Name: " + test.getName()
-                + "\nClass: " + test.getClasification()
-                + "\nType: " + test.getClas());
-    }
-
-    /**
-     * Metodo para probar la asignación
-     * aleatoria con alta dificultad.
-     * @author Francisco De La Torre
-     * @throws IOException Error en
-     *         caso de no leer el archivo
-     * */
-    @Test
-    public void testHiDif() throws IOException {
-        Basura test = selectB(new Basura());
-        Dificulty dif = new Difalta();
-        dif.setClass(test);
-        System.out.println("Name: " + test.getName()
-                + "\nClass: " + test.getClasification()
-                + "\nType: " + test.getClas());
-    }
 
 
 }

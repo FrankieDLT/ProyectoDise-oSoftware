@@ -35,20 +35,7 @@ public class DifMedia extends Dificulty {
     }
 
 
-    /**
-     * Metodo para probar la asignación.
-     * @author Francisco De La Torre
-     * */
-    @Test
-    public void testMed() {
-        Basura test = new Basura();
-        Dificulty dif = new DifMedia();
-        test.setClasification("O");
-        dif.setClass(test);
 
-        System.out.println(test.getClas());
-
-    }
 
 
 }
