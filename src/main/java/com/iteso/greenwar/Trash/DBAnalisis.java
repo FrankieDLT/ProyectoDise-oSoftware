@@ -1,0 +1,208 @@
+package com.iteso.greenwar.Trash;
+
+import com.iteso.greenwar.Trash.Impl.DifBasica;
+import com.iteso.greenwar.Trash.Impl.DifMedia;
+import com.iteso.greenwar.Trash.Impl.Difalta;
+import org.junit.Test;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.Random;
+
+/**
+ * This class will act as a database from
+ * which an object type "Basura".
+ * will be drawn to be played with
+ * @author FrankDLT
+ * @version 14/04/2020/1.0
+ * */
+public class DBAnalisis {
+
+        /**
+         * Número aleatorio.
+         *
+         * @author Francisco De La Torre
+         */
+        private Random ra = new Random();
+        /**
+         * Número para la elección.
+         *
+         * @author Francisco De La Torre
+         */
+        private int ran = 0;
+
+        /**
+         * Tope del Número aleatorio.
+         *
+         * @author Francisco De La Torre
+         */
+        private final int doscientos = 200;
+
+    /**
+     * This method recieves a object and changes its name and its
+     * type to a certain one depending on the type
+     * of trash selected by a random number.
+     * @author FrankDLT
+     * @version 06/04/2020/1.0
+     * @param b Basura a llenar de datos
+     * @return b Basura con datos
+     * @throws IOException Error en
+     * caso de no leer el archivo
+     * */
+    public Basura selectB(final Basura b) throws IOException {
+
+        ran = ra.nextInt(doscientos);
+
+        /**
+         * Linea leida de la Base de Datos.
+         *
+         * @author Francisco De La Torre
+         */
+        String linea;
+
+        /**
+         * Arreglo que divide la linea en nombre
+         * y clase.
+         *
+         * @author Francisco De La Torre
+         */
+        String[] basu = new String[2];
+
+        /**
+         * Buffer que carga la Base de Datos.
+         *
+         * @author Francisco De La Torre
+         */
+        BufferedReader dataBse = null;
+
+        /**
+         * Arreglo al que se le carga la Base
+         * de Datos.
+         *
+         * @author Francisco De La Torre
+         */
+        ArrayList<String> list = new ArrayList<String>();
+
+        /**
+         * Dirección del archivo que contiene
+         * la Base de Datos.
+         *
+         * @author Francisco De La Torre
+         */
+        URL direcc = getClass().getResource("DB.txt");
+        FileReader dB =
+                new FileReader(direcc.getPath());
+
+                try {
+
+                    dataBse = new BufferedReader(dB);
+                    // Lectura del fichero
+                    while ((linea = dataBse.readLine()) != null) {
+                        list.add(linea);
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
+                dB.close();
+        /**
+         * Arreglo con el que se trabajan y separan
+         * los datos.
+         *
+         * @author Francisco De La Torre
+         */
+                String[] myArray = new String[list.size()];
+                list.toArray(myArray);
+
+
+                //basu = myArray[ran].split("|", 1); no funciona
+        /**
+         * Indice del separador entre nombre
+         * y clase en la linea.
+         *
+         * @author Francisco De La Torre
+         */
+                 int index = myArray[ran].indexOf("|");
+                 basu[0] = myArray[ran].substring(0, index);
+                 basu[1] = myArray[ran].substring(index + 1);
+                 basu[0].trim();
+                 basu[1].trim();
+
+                 b.setName(basu[0]);
+                 b.setClasification(basu[1]);
+
+                return b;
+
+
+    }
+
+    /**
+     * Metodo para probar los valores aleatorios.
+     * @author Francisco De La Torre
+     * @throws IOException Error en
+     *      caso de no leer el archivo
+     * */
+
+    @Test
+    public void testH() throws IOException {
+        Basura test = selectB(new Basura());
+        System.out.println("Name: " + test.getName()
+                + "\nClass: " + test.getClasification());
+    }
+
+    /**
+     * Metodo para probar la asignación
+     * aleatoria con baja dificultad.
+     * @author Francisco De La Torre
+     * @throws IOException Error en
+     *          caso de no leer el archivo
+     * */
+    @Test
+    public void testLoDif() throws IOException {
+        Basura test = selectB(new Basura());
+        Dificulty dif = new DifBasica();
+        dif.setClass(test);
+        System.out.println("Name: " + test.getName()
+                + "\nClass: " + test.getClasification()
+                + "\nType: " + test.getClas());
+    }
+
+    /**
+     * Metodo para probar la asignación
+     * aleatoria con media dificultad.
+     * @author Francisco De La Torre
+     * @throws IOException Error en
+     *         caso de no leer el archivo
+     * */
+    @Test
+    public void testMedDif() throws IOException {
+        Basura test = selectB(new Basura());
+        Dificulty dif = new DifMedia();
+        dif.setClass(test);
+        System.out.println("Name: " + test.getName()
+                + "\nClass: " + test.getClasification()
+                + "\nType: " + test.getClas());
+    }
+
+    /**
+     * Metodo para probar la asignación
+     * aleatoria con alta dificultad.
+     * @author Francisco De La Torre
+     * @throws IOException Error en
+     *         caso de no leer el archivo
+     * */
+    @Test
+    public void testHiDif() throws IOException {
+        Basura test = selectB(new Basura());
+        Dificulty dif = new Difalta();
+        dif.setClass(test);
+        System.out.println("Name: " + test.getName()
+                + "\nClass: " + test.getClasification()
+                + "\nType: " + test.getClas());
+    }
+
+
+}
