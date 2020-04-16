@@ -14,7 +14,11 @@ public class StartGame {
      *             stores arguments passed by command line
      *             while starting a program"
      * */
-    public  void main(final String[] args) {
+    public void main(final String[] args) {
+        StartCurrentGameStruct startCurrentGameStruct = new StartCurrentGameStruct();
+
+        startCurrentGameStruct.displayLevel();
+        startCurrentGameStruct.displayOptions();
 
     }
 }

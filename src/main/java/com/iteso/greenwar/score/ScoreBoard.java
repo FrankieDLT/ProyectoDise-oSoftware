@@ -1,5 +1,8 @@
 package com.iteso.greenwar.score;
 
+import com.iteso.greenwar.banner.impl.BannerSimpleObserver;
+import com.iteso.greenwar.banner.impl.Display;
+
 import java.util.ArrayList;
 
 /**
@@ -43,9 +46,20 @@ public abstract class ScoreBoard {
      * @author: jortiz
      * @version: 14/04/2020/1.0
      */
-    public void currentScore() {
-        //Aqui la voy a utilizar para poner hacer un banner
-        // de resultados(observer pattern) y mostrarlo
+    public void currentScore(int chooseQuiz, String answer) {
+
+        Display display = new  Display();
+        BannerSimpleObserver bannerSimpleObserver = new BannerSimpleObserver();
+        display.finishRegisterRecords(bannerSimpleObserver);
+
+        CurrentQuestion cQ;
+
+        for (int i=0;i < questionsCurrentGame.size();i++){
+            cQ = (CurrentQuestion) questionsCurrentGame.get(i);
+            System.out.println("\tPorcentajes del juego:");
+
+
+        }
     }
 
     /**
@@ -54,8 +68,7 @@ public abstract class ScoreBoard {
      * @version: 14/04/2020/1.0
      */
     public void finalScore() {
-        //Aqui voy a implementar una vez que termine la partida
-        // que guarde en un archivo de txt los resultados
+
     }
 
     /**
