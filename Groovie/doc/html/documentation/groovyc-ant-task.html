@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 1.5.6.1">
+<title>The &lt;groovyc&gt; Ant Task</title>
+<link rel="stylesheet" href="./assets/css/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+</head>
+<body class="book toc2 toc-left">
+<div id="header">
+<h1>The &lt;groovyc&gt; Ant Task</h1>
+<div class="details">
+<span id="revnumber">version 3.0.3</span>
+</div>
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#ThegroovycAntTask-groovyc">1. <code>&lt;groovyc&gt;</code></a>
+<ul class="sectlevel2">
+<li><a href="#ThegroovycAntTask-Description">1.1. Description</a></li>
+<li><a href="#ThegroovycAntTask-Requiredtaskdef">1.2. Required taskdef</a></li>
+<li><a href="#ThegroovycAntTask-groovycAttributes">1.3. &lt;groovyc&gt; Attributes</a></li>
+<li><a href="#ThegroovycAntTask-groovycNestedElements">1.4. &lt;groovyc&gt; Nested Elements</a></li>
+<li><a href="#ThegroovycAntTask-JointCompilation">1.5. Joint Compilation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="content">
+<div class="sect1">
+<h2 id="ThegroovycAntTask-groovyc"><a class="anchor" href="#ThegroovycAntTask-groovyc"></a>1. <code>&lt;groovyc&gt;</code></h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="ThegroovycAntTask-Description"><a class="anchor" href="#ThegroovycAntTask-Description"></a>1.1. Description</h3>
+<div class="paragraph">
+<p>Compiles Groovy source files and, if joint compilation option is used, Java source files from <a href="http://ant.apache.org/">Apache Ant</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="ThegroovycAntTask-Requiredtaskdef"><a class="anchor" href="#ThegroovycAntTask-Requiredtaskdef"></a>1.2. Required taskdef</h3>
+<div class="paragraph">
+<p>Assuming the groovy jars are in <em>groovy.libs</em>, you will need to declare this task
+at some point in the <code>build.xml</code> prior to the <code>groovyc</code> task being invoked.
+Consider also adding any additional Groovy module jars, libraries and potentially transitive dependencies you might be using.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-xml" data-lang="xml">&lt;taskdef name="groovyc" classname="org.codehaus.groovy.ant.Groovyc"&gt;
+  &lt;classpath&gt;
+    &lt;fileset file="${groovy.libs}/groovy-ant-VERSION.jar"/&gt;
+    &lt;fileset file="${groovy.libs}/groovy-VERSION.jar"/&gt;
+  &lt;/classpath&gt;
+&lt;/taskdef&gt;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="ThegroovycAntTask-groovycAttributes"><a class="anchor" href="#ThegroovycAntTask-groovycAttributes"></a>1.3. &lt;groovyc&gt; Attributes</h3>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Attribute</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Required</th>
+</tr>
+</thead>
+<tfoot>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">errorProperty</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The property to set on compilation failure. This property will be set if
+the compilation fails.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+</tr>
+</tfoot>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">srcdir</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Location of the Groovy (and possibly Java) source files.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">destdir</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Location to store the class files.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">classpath</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The classpath to use.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">classpathref</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The classpath to use given as a path references.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">sourcepath</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The sourcepath to use.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">sourcepathref</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The sourcepath to use given as a path reference.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">encoding</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Encoding of source files.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">verbose</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Asks the compiler for verbose output; defaults to no.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">includeAntRuntime</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Whether to include the Ant run-time libraries in the
+classpath; defaults to yes.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">includeJavaRuntime</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Whether to include the default run-time libraries
+from the executing VM in the classpath; defaults to no.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">includeDestClasses</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This property controls whether to include the destination
+classes directory in the classpath given to the compiler. The default value is "true".</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">fork</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Whether to execute groovyc using a spawned instance of the JVM;
+defaults to no.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">memoryInitialSize</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The initial size of the memory for the underlying
+VM, if using fork mode; ignored otherwise. Defaults to the standard VM
+memory setting. (Examples: 83886080, 81920k, or 80m)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">memoryMaximumSize</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The maximum size of the memory for the underlying
+VM, if using fork mode; ignored otherwise. Defaults to the standard VM
+memory setting. (Examples: 83886080, 81920k, or 80m)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">failonerror</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Indicates whether compilation errors will fail the build;
+defaults to true.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">proceed</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Inverse alias for <em>failonerror</em>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">listfiles</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Indicates whether the source files to be compiled will be
+listed; defaults to no.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">stacktrace</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">if true each compile error message will contain a
+stacktrace</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">indy</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Enable compilation with the ``invoke dynamic'' support when using
+Groovy 2.0 and beyond and running on JDK 7</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">scriptBaseClass</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sets the base class for Groovy scripts</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">stubdir</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Set the stub directory into which the Java source stub files should be generated.
+The directory need not exist and will not be deleted automatically - though its contents
+will be cleared unless 'keepStubs' is true. Ignored when forked.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">keepStubs</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Set the keepStubs flag. Defaults to false. Set to true for debugging.
+Ignored when forked.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">forceLookupUnnamedFiles</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The Groovyc Ant task is frequently used in the context of a build system
+that knows the complete list of source files to be compiled. In such a
+context, it is wasteful for the Groovy compiler to go searching the
+classpath when looking for source files and hence by default the
+Groovyc Ant task calls the compiler in a special mode with such searching
+turned off. If you wish the compiler to search for source files then
+you need to set this flag to true. Defaults to false.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">configscript</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Set the configuration file used to customize the compilation configuration.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">parameters</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Generates metadata for reflection on method parameter names on JDK 8 and above.
+Defaults to false.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">previewFeatures</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Enables the JEP preview features on JDK 12 and above.
+Defaults to false.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">targetBytecode</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sets the bytecode compatibility level.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">javahome</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sets the <code>java.home</code> value to use, default is the current JDK&#8217;s home.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">executable</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sets the name of the java executable to use when invoking the compiler in forked mode,
+ignored otherwise.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">scriptExtension</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Set the extension to use when searching for Groovy source files.
+Accepts extensions in the form *.groovy, .groovy or groovy.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">updatedProperty</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The property to set on compilation success. This property will not be set if
+the compilation fails, or if there are no files to compile.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-xml" data-lang="xml">&lt;path id="classpath.main"&gt;
+  &lt;fileset dir="${groovy.libs}" includes="*.jar" excludes="groovy-ant-*.jar"/&gt;
+  ...
+&lt;/path&gt;
+&lt;groovyc srcdir="${dir.sources}" destdir="${dir.classes}" classpathref="classpath.main"
+         fork="true" includeantruntime="false" configscript="config.groovy" targetBytecode="1.8"/&gt;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="ThegroovycAntTask-groovycNestedElements"><a class="anchor" href="#ThegroovycAntTask-groovycNestedElements"></a>1.4. &lt;groovyc&gt; Nested Elements</h3>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">element</th>
+<th class="tableblock halign-left valign-top">kind</th>
+<th class="tableblock halign-left valign-top">Required</th>
+<th class="tableblock halign-left valign-top">Replaces Attribute</th>
+</tr>
+</thead>
+<tfoot>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">javac</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">javac task</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">N/A</p></td>
+</tr>
+</tfoot>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">src</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">a path structure</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes (unless srcdir is used)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">srcdir</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">classpath</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">a path structure</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">classpath or classpathref</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><strong>Notes:</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>For path structures see for example
+<a href="http://ant.apache.org/manual/using.html#path" class="bare">http://ant.apache.org/manual/using.html#path</a></p>
+</li>
+<li>
+<p>For usages of the <code>javac</code> task see
+<a href="https://ant.apache.org/manual/Tasks/javac.html" class="bare">https://ant.apache.org/manual/Tasks/javac.html</a></p>
+</li>
+<li>
+<p>The nested <code>javac</code> task behaves more or less as documented for the top-level
+<code>javac</code> task. <code>srcdir</code>, <code>destdir</code>, <code>classpath</code>, <code>encoding</code> and <code>parameters</code>
+for the nested <code>javac</code> task are taken from the enclosing <code>groovyc</code> task. If
+these attributes are specified then they are added, they do not replace. In fact,
+you should not attempt to overwrite the destination. Other attributes and nested
+elements are unaffected, for example <code>fork</code>, <code>memoryMaximumSize</code>, etc. may be
+used freely.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="ThegroovycAntTask-JointCompilation"><a class="anchor" href="#ThegroovycAntTask-JointCompilation"></a>1.5. Joint Compilation</h3>
+<div class="paragraph">
+<p>Joint compilation is enabled by using an embedded <code>javac</code> element, as shown in the following example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-xml" data-lang="xml">&lt;groovyc srcdir="${testSourceDirectory}" destdir="${testClassesDirectory}" targetBytecode="1.8"&gt;
+  &lt;classpath&gt;
+    &lt;pathelement path="${mainClassesDirectory}"/&gt;
+    &lt;pathelement path="${testClassesDirectory}"/&gt;
+    &lt;path refid="testPath"/&gt;
+  &lt;/classpath&gt;
+  &lt;javac debug="true" source="1.8" target="1.8" /&gt;
+&lt;/groovyc&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>More details about joint compilation can be found in the <a href="tools-groovyc.html#section-jointcompilation">joint compilation</a> section.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Version 3.0.3<br>
+Last updated 2020-04-07 16:15:42 AEST
+</div>
+</div>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.min.js"></script>
+<script>prettyPrint()</script>
+</body>
+</html>
