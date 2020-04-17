@@ -208,19 +208,22 @@ public class StartCurrentGameStruct {
             }
 
             System.out.println("\n\t\t\t"+ quest.getName());
+            //System.out.println("\n\t\t\t Caja de Zapatos");
 
             chooseMenuLevel(chooseLevel);
             int m = sc.nextInt();
             Basura trash = convertAnswer(chooseLevel,m);
 
-            boolean isHit = (quest.getClas().compareTo(trash.getClas()) == 1);
+            //String DataText = "Org";
+            boolean isHit = (trash.getClas().equals(quest.getClas()));
+            //boolean isHit = (trash.getClas().equals(DataText));
             currentQuestion.setHit(isHit);
             scoreBoard.addCurrentGameScore(currentQuestion);
             scoreBoard.setPlayer(player);
 
         }
         scoreBoard.currentScore();
-        scoreBoard.finalScore();
+        //scoreBoard.finalScore();
 
     }
 }

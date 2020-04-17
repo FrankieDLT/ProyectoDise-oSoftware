@@ -28,7 +28,7 @@ public class BannerSimpleObserver implements Observer {
      * @author: jortiz
      * @version: 14/04/2020/1.0
      */
-    private float markIs;
+    private int markIs;
     /**
      * Boolean for the correct answer.
      * @author: jortiz
@@ -46,7 +46,7 @@ public class BannerSimpleObserver implements Observer {
 
         String scoredBoard = "";
             scoredBoard += "\n\t\tTurno: " + turnIs
-                    + "\tAcierto: " + isHit + "\tPromedio: " + markIs;
+                    + "\tAcierto: " + isHit + "\tPromedio: " + markIs+"%";
 
         System.out.println(scoredBoard);
     }
@@ -61,12 +61,11 @@ public class BannerSimpleObserver implements Observer {
      * @param hit correct or not
      */
     public void scoreUpdate(final int turn, final  int totalTurns,
-                            final float mark, final boolean hit) {
+                            final int mark, final boolean hit) {
         this.turnIs = turn;
         this.totalTurnsAre = totalTurns;
         this.markIs = mark;
         this.isHit = hit;
-
         display();
     }
 }

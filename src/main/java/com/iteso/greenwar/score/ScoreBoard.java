@@ -47,19 +47,30 @@ public abstract class ScoreBoard {
      * @version: 14/04/2020/1.0
      */
     public void currentScore() {
-
-        Display display = new  Display();
+        int countTurns = 1, countHits = 0;
+        int marks=0;
+        Display display = new  Display(); //Subject
         BannerSimpleObserver bannerSimpleObserver = new BannerSimpleObserver();
         display.finishRegisterRecords(bannerSimpleObserver);
 
         CurrentQuestion cQ;
 
         for (int i=0;i < questionsCurrentGame.size();i++){
-            cQ = (CurrentQuestion) questionsCurrentGame.get(i);
-            System.out.println("\tPorcentajes del juego:");
-            display.setScore(i++,questionsCurrentGame.size(),(float)0.0,cQ.isHit());
 
+            cQ = (CurrentQuestion) questionsCurrentGame.get(i);
+
+            countHits = (cQ.isHit()== true)?countHits+1:countHits;
+            marks = (countHits * 100)/countTurns;
+
+            System.out.println("\tPorcentajes del juego:");
+            display.setScore(countTurns,questionsCurrentGame.size(),marks,cQ.isHit());
+
+            countTurns++;
         }
+        player.setFinalScore(marks);
+        System.out.println("\n\n\t\tFin del juego" +
+                "\n\tJugador: "+player.getNickname()+
+                "\n\tRecord: "+player.getFinalScore()+"%");
     }
 
     /**
