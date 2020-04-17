@@ -2,7 +2,6 @@ package com.iteso.greenwar.Trash.Impl;
 
 import com.iteso.greenwar.Trash.Basura;
 import com.iteso.greenwar.Trash.Dificulty;
-import org.junit.Test;
 
 /**
  * This class implements the dificulty class with a low level.

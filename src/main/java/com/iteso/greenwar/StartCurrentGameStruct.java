@@ -192,11 +192,6 @@ public class StartCurrentGameStruct {
             currentQuestion = new CurrentQuestion();
             dificulty = chooseLevel(chooseLevel);
 
-            /*
-            Implementa aqui la funcion
-            */
-
-            //System.out.println("\n\t\t\t"+i+" - Cuaderno usado");
             DBAnalisis t = new DBAnalisis();
             Dificulty dif;
             Basura quest = t.selectB(new Basura());
@@ -214,20 +209,18 @@ public class StartCurrentGameStruct {
 
             System.out.println("\n\t\t\t"+ quest.getName());
 
-
             chooseMenuLevel(chooseLevel);
             int m = sc.nextInt();
             Basura trash = convertAnswer(chooseLevel,m);
 
+            boolean isHit = (quest.getClas().compareTo(trash.getClas()) == 1);
+            currentQuestion.setHit(isHit);
+            scoreBoard.addCurrentGameScore(currentQuestion);
+            scoreBoard.setPlayer(player);
 
-
-            //System.out.println(trash.getClasification()+" "+ trash.getClas());
-            //currentQuestion.setHit(true);
-            //scoreBoard.addCurrentGameScore(currentQuestion);
-            //scoreBoard.setPlayer(player);
-
-            //scoreBoard.currentScore(cycle);
         }
+        scoreBoard.currentScore();
+        scoreBoard.finalScore();
 
     }
 }
