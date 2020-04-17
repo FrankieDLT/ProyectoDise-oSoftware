@@ -1,4 +1,7 @@
 package com.iteso.greenwar;
+
+import java.util.Scanner;
+
 /**
  * This class will act as the initialization
  * class for the game.
@@ -14,11 +17,21 @@ public class StartGame {
      *             stores arguments passed by command line
      *             while starting a program"
      * */
-    public void main(final String[] args) {
+    public static void main(final String[] args) {
         StartCurrentGameStruct startCurrentGameStruct = new StartCurrentGameStruct();
+        Scanner sc1 = new Scanner(System.in);
+        Scanner sc2 = new Scanner(System.in);
 
         startCurrentGameStruct.displayLevel();
-        startCurrentGameStruct.displayOptions();
-
+        while(sc1.hasNextInt()) {
+            int n = sc1.nextInt();
+            startCurrentGameStruct.displayOptions();
+            while(sc2.hasNextInt()) {
+                int m = sc2.nextInt();
+                startCurrentGameStruct.starCurrentGame(m,n);
+            }
+            sc2.close();
+        }
+        sc1.close();
     }
 }
