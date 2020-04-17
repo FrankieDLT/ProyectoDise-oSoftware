@@ -178,20 +178,15 @@ public class StartCurrentGameStruct {
         System.out.println(Messages);
     }
 
-    public void starCurrentGame(int chooseQuiz, int chooseLevel){
+    public void starCurrentGame(int chooseQuiz, int chooseLevel,Player player){
         ScoreBoard scoreBoard;
         Dificulty dificulty;
-        Player player = new Player();
         CurrentQuestion currentQuestion;
 
         scoreBoard = Score.getInstance();
 
         int cycle = chooseQuiz(chooseQuiz);
-        System.out.println( "\n\n\tIngrese nombre de jugador");
-        Scanner user = new Scanner(System.in);
-        String name = user.next();
-        player.setNickname(name);
-        user.close();
+        Scanner sc = new Scanner(System.in);
 
         for(int i=1;i<=cycle;i++) {
             currentQuestion = new CurrentQuestion();
@@ -201,21 +196,16 @@ public class StartCurrentGameStruct {
             Implementa aqui la funcion
             */
 
-            System.out.println("\n\t\t\tCuaderno usado");
+            System.out.println("\n\t\t\t"+i+" - Cuaderno usado");
             chooseMenuLevel(chooseLevel);
-            Scanner sc = new Scanner(System.in);
+            int m = sc.nextInt();
+            Basura trash = convertAnswer(chooseLevel,m);
+            System.out.println(trash.getClasification()+" "+ trash.getClas());
+            //currentQuestion.setHit(true);
+            //scoreBoard.addCurrentGameScore(currentQuestion);
+            //scoreBoard.setPlayer(player);
 
-            while(sc.hasNextInt()) {
-                int m = sc.nextInt();
-
-                Basura trash = convertAnswer(chooseLevel,m);
-                System.out.println(trash.getClasification()+" "+ trash.getClas());
-                currentQuestion.setHit(true);
-                scoreBoard.addCurrentGameScore(currentQuestion);
-                scoreBoard.setPlayer(player);
-            }
-            scoreBoard.currentScore(cycle);
-            sc.close();
+            //scoreBoard.currentScore(cycle);
         }
 
     }

@@ -1,5 +1,7 @@
 package com.iteso.greenwar;
 
+import com.iteso.greenwar.score.Player;
+
 import java.util.Scanner;
 
 /**
@@ -19,19 +21,21 @@ public class StartGame {
      * */
     public static void main(final String[] args) {
         StartCurrentGameStruct startCurrentGameStruct = new StartCurrentGameStruct();
-        Scanner sc1 = new Scanner(System.in);
-        Scanner sc2 = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
+        Scanner user = new Scanner(System.in);
+        Player player = new Player();
 
         startCurrentGameStruct.displayLevel();
-        while(sc1.hasNextInt()) {
-            int n = sc1.nextInt();
+        while(sc.hasNextInt()) {
+            int n = sc.nextInt();
             startCurrentGameStruct.displayOptions();
-            while(sc2.hasNextInt()) {
-                int m = sc2.nextInt();
-                startCurrentGameStruct.starCurrentGame(m,n);
-            }
-            sc2.close();
+            int m = sc.nextInt();
+            System.out.println( "\n\n\tIngrese nombre de jugador");
+            String name = user.nextLine();
+            player.setNickname(name);
+            startCurrentGameStruct.starCurrentGame(m,n,player);
+            user.close();
         }
-        sc1.close();
+        sc.close();
     }
 }
