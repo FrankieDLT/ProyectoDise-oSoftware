@@ -20,5 +20,5 @@ public interface Observer {
      *                  of turns for the payer
      * @param turn current turn
      */
-    void scoreUpdate(int turn, int totalTurns, float mark, boolean hit);
+    void scoreUpdate(int turn, int totalTurns, int mark, boolean hit);
 }

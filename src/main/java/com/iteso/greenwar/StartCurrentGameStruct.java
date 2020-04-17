@@ -7,8 +7,12 @@ import com.iteso.greenwar.Trash.Impl.DifBasica;
 import com.iteso.greenwar.Trash.Impl.DifMedia;
 import com.iteso.greenwar.Trash.Impl.Difalta;
 import com.iteso.greenwar.score.CurrentQuestion;
+import com.iteso.greenwar.score.Player;
 import com.iteso.greenwar.score.ScoreBoard;
 import com.iteso.greenwar.score.impl.Score;
+
+import java.io.IOException;
+import java.util.Scanner;
 
 /**
  * This class will act as the selection
@@ -50,13 +54,10 @@ public class StartCurrentGameStruct {
         switch (selectionNumber) {
             case 1:
                 return littleQuiz;
-                //break; UNREACHABLE
             case 2:
                 return middleQuiz;
-            //break; UNREACHABLE
             case 3:
                 return bigQuiz;
-            //break; UNREACHABLE
             default:
                 return 0;
         }
@@ -67,17 +68,98 @@ public class StartCurrentGameStruct {
         switch (selectionNumber) {
             case 1:
                 return dificulty = new DifBasica();
-            //break; UNREACHABLE
             case 2:
                 return dificulty = new DifMedia();
-            //break; UNREACHABLE
             case 3:
                 return dificulty = new Difalta();
-            //break; UNREACHABLE
             default:
                 return null;
         }
     }
+
+    private  void chooseMenuLevel(final int selectionNumber) {
+        String Messages =  "";
+        switch (selectionNumber) {
+            case 1:
+                Messages = "\n\n\tSeleccione la respuesta" +
+                        "\n\t\t1.- Organico" +
+                        "\n\t\t2.- Inorganico";
+                break;
+            case 2:
+                Messages =  "\n\n\tSeleccione la respuesta" +
+                        "\n\t\t1.- Organico" +
+                        "\n\t\t2.- Inorganico" +
+                        "\n\t\t3.- Reciclable";
+                break;
+            case 3:
+                Messages = "\n\n\tSeleccione la respuesta" +
+                        "\n\t\t1.- Organico" +
+                        "\n\t\t2.- Metal" +
+                        "\n\t\t3.- Vidrio" +
+                        "\n\t\t4.- Papel" +
+                        "\n\t\t5.- Plastico" +
+                        "\n\t\t6.- Textil" +
+                        "\n\t\t7.- Basura Tecnologica";
+                break;
+        }
+        System.out.println(Messages);
+    }
+
+    private  Basura convertAnswer(final int selectionNumber, final int answer) {
+        Basura trash = new Basura();
+        switch (selectionNumber) {
+            case 1:
+                switch (answer){
+                    case 1:
+                        trash.setClas("Org");
+                        break;
+                    case 2:
+                        trash.setClas("Ino");
+                        break;
+                }
+                break;
+            case 2:
+                switch (answer){
+                    case 1:
+                        trash.setClas("Org");
+                        break;
+                    case 2:
+                        trash.setClas("Ino");
+                        break;
+                    case 3:
+                        trash.setClas("Rec");
+                        break;
+                }
+                break;
+            case 3:
+                switch (answer){
+                    case 1:
+                        trash.setClas("Org");
+                        break;
+                    case 2:
+                        trash.setClas("Met");
+                        break;
+                    case 3:
+                        trash.setClas("Vid");
+                        break;
+                    case 4:
+                        trash.setClas("Pap");
+                        break;
+                    case 5:
+                        trash.setClas("Pla");
+                        break;
+                    case 6:
+                        trash.setClas("Tex");
+                        break;
+                    case 7:
+                        trash.setClas("Bat");
+                        break;
+                }
+                break;
+        }
+        return trash;
+    }
+
 
     public void displayOptions(){
         String Messages = "\n\n\tSeleccione el numero que desea acertar" +
@@ -96,17 +178,52 @@ public class StartCurrentGameStruct {
         System.out.println(Messages);
     }
 
-    public void starCurrentGame(int chooseQuiz, int chooseLevel){
+    public void starCurrentGame(int chooseQuiz, int chooseLevel,Player player) throws IOException {
         ScoreBoard scoreBoard;
+        Dificulty dificulty;
         CurrentQuestion currentQuestion;
 
         scoreBoard = Score.getInstance();
-        currentQuestion = new CurrentQuestion();
-        Dificulty dif = chooseLevel(chooseLevel);
 
-        for(int i=1;i<=chooseQuiz;i++){
+        int cycle = chooseQuiz(chooseQuiz);
+        Scanner sc = new Scanner(System.in);
 
+        for(int i=1;i<=cycle;i++) {
+            currentQuestion = new CurrentQuestion();
+            dificulty = chooseLevel(chooseLevel);
+
+            DBAnalisis t = new DBAnalisis();
+            Dificulty dif;
+            Basura quest = t.selectB(new Basura());
+
+            switch(chooseLevel){
+                case 1: dif = new DifBasica();
+                        dif.setClass(quest); break;
+                case 2: dif = new DifMedia();
+                        dif.setClass(quest); break;
+                case 3:
+                        dif = new Difalta();
+                        dif.setClass(quest); break;
+                default: break;
+            }
+
+            System.out.println("\n\t\t\t"+ quest.getName());
+            //System.out.println("\n\t\t\t Caja de Zapatos");
+
+            chooseMenuLevel(chooseLevel);
+            int m = sc.nextInt();
+            Basura trash = convertAnswer(chooseLevel,m);
+
+            //String DataText = "Org";
+            boolean isHit = (trash.getClas().equals(quest.getClas()));
+            //boolean isHit = (trash.getClas().equals(DataText));
+            currentQuestion.setHit(isHit);
+            scoreBoard.addCurrentGameScore(currentQuestion);
+            scoreBoard.setPlayer(player);
 
         }
+        scoreBoard.currentScore();
+        //scoreBoard.finalScore();
+
     }
 }

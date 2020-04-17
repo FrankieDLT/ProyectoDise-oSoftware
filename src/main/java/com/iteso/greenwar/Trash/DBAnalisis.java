@@ -1,10 +1,5 @@
 package com.iteso.greenwar.Trash;
 
-import com.iteso.greenwar.Trash.Impl.DifBasica;
-import com.iteso.greenwar.Trash.Impl.DifMedia;
-import com.iteso.greenwar.Trash.Impl.Difalta;
-import org.junit.Test;
-
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;

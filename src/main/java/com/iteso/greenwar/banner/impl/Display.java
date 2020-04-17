@@ -36,7 +36,7 @@ public class Display implements Subject {
      * @author: jortiz
      * @version: 14/04/2020/1.0
      */
-    private float markIs;
+    private int markIs;
     /**
      * Boolean for the correct answer.
      * @author: jortiz
@@ -60,7 +60,6 @@ public class Display implements Subject {
      * @param observer Oberver for this action
      */
     public void startRegisterRecords(final Observer observer) {
-
         observers.add(observer);
     }
 
@@ -71,7 +70,7 @@ public class Display implements Subject {
      * @param observer Oberver for this action
      */
     public void finishRegisterRecords(final Observer observer) {
-
+        observers.add(observer);
     }
     /**
      * Method that notifies about newly registered.
@@ -97,7 +96,7 @@ public class Display implements Subject {
      * @param hit correct or not
      */
     public void setScore(final int turn, final int totalTurns,
-                         final float mark, final boolean hit) {
+                         final int mark, final boolean hit) {
         this.turnIs = turn;
         this.totalTurnsAre = totalTurns;
         this.markIs = mark;
@@ -105,37 +104,3 @@ public class Display implements Subject {
         notifyRegisterRecords();
     }
 }
-
-/**
- public JamaiconScoresSubject(){
- observers = new ArrayList();
- }
-
-
- public void registerObserver(Observer observer) {
- observers.add(observer);
- }
-
- public void removeObserver(Observer observer) {
- observers.remove(observers.indexOf(observer));
- }
-
-
- public void notifyObservers() {
- for (Object observer1 : observers) {
- Observer observer = (Observer) observer1;
- observer.scoreUpdate(this.homeTeam, this.awayTeam,
- this.homeGoals, this.awayGoals);
- }
- }
-
-
-
- public void setScore( String home, String away, int hg, int ag){
- this.homeTeam = home;
- this.awayTeam =  away;
- this.homeGoals = hg;
- this.awayGoals = ag;
- notifyObservers();
- }
- ***/
