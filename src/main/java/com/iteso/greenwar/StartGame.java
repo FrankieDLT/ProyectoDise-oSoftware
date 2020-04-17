@@ -2,6 +2,7 @@ package com.iteso.greenwar;
 
 import com.iteso.greenwar.score.Player;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 /**
@@ -19,7 +20,7 @@ public class StartGame {
      *             stores arguments passed by command line
      *             while starting a program"
      * */
-    public static void main(final String[] args) {
+    public static void main(final String[] args) throws IOException {
         StartCurrentGameStruct startCurrentGameStruct = new StartCurrentGameStruct();
         Scanner sc = new Scanner(System.in);
         Scanner user = new Scanner(System.in);

@@ -178,7 +178,7 @@ public class StartCurrentGameStruct {
         System.out.println(Messages);
     }
 
-    public void starCurrentGame(int chooseQuiz, int chooseLevel,Player player){
+    public void starCurrentGame(int chooseQuiz, int chooseLevel,Player player) throws IOException {
         ScoreBoard scoreBoard;
         Dificulty dificulty;
         CurrentQuestion currentQuestion;
@@ -196,11 +196,32 @@ public class StartCurrentGameStruct {
             Implementa aqui la funcion
             */
 
-            System.out.println("\n\t\t\t"+i+" - Cuaderno usado");
+            //System.out.println("\n\t\t\t"+i+" - Cuaderno usado");
+            DBAnalisis t = new DBAnalisis();
+            Dificulty dif;
+            Basura quest = t.selectB(new Basura());
+
+            switch(chooseLevel){
+                case 1: dif = new DifBasica();
+                        dif.setClass(quest); break;
+                case 2: dif = new DifMedia();
+                        dif.setClass(quest); break;
+                case 3:
+                        dif = new Difalta();
+                        dif.setClass(quest); break;
+                default: break;
+            }
+
+            System.out.println("\n\t\t\t"+ quest.getName());
+
+
             chooseMenuLevel(chooseLevel);
             int m = sc.nextInt();
             Basura trash = convertAnswer(chooseLevel,m);
-            System.out.println(trash.getClasification()+" "+ trash.getClas());
+
+
+
+            //System.out.println(trash.getClasification()+" "+ trash.getClas());
             //currentQuestion.setHit(true);
             //scoreBoard.addCurrentGameScore(currentQuestion);
             //scoreBoard.setPlayer(player);
