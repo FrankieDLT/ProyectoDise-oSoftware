@@ -13,30 +13,44 @@ import java.util.Scanner;
  * */
 public class StartGame {
     /**
+     * This class is the main constructor for the game.
+     * @author Francisco De La Torre
+     * @version 06/04/2020/1.0
+     * */
+    protected StartGame() {
+
+    }
+
+    /**
      * This class is the main class for the game.
      * @author Juan Carlos
      * @version 06/04/2020/1.0
      * @param args "array of strings which
      *             stores arguments passed by command line
      *             while starting a program"
+     * @throws IOException Posible error
+     *                      when loading the DB
      * */
     public static void main(final String[] args) throws IOException {
-        StartCurrentGameStruct startCurrentGameStruct = new StartCurrentGameStruct();
+        StartCurrentGameStruct startCurrentGameStruct
+                = new StartCurrentGameStruct();
         Scanner sc = new Scanner(System.in);
         Scanner user = new Scanner(System.in);
         Player player = new Player();
 
         startCurrentGameStruct.displayLevel();
-        while(sc.hasNextInt()) {
+        while (sc.hasNextInt()) {
             int n = sc.nextInt();
             startCurrentGameStruct.displayOptions();
             int m = sc.nextInt();
-            System.out.println( "\n\n\tIngrese nombre de jugador");
+            System.out.println("\n\n\tIngrese nombre de jugador");
             String name = user.nextLine();
             player.setNickname(name);
-            startCurrentGameStruct.starCurrentGame(m,n,player);
+            startCurrentGameStruct.starCurrentGame(m, n, player);
             user.close();
         }
         sc.close();
     }
+
+
 }
