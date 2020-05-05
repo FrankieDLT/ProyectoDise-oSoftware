@@ -1,10 +1,10 @@
-#Fri Apr 17 16:12:14 CDT 2020
+#Tue May 05 16:24:02 CDT 2020
 C\:\\Users\\DELL\\Documents\\DisenoDeSoftware\\Git\\ProyectoDise-oSoftware\\src\\main\\java\\com\\iteso\\greenwar\\package-info.java=1586891398383
 C\:\\Users\\DELL\\Documents\\DisenoDeSoftware\\Git\\ProyectoDise-oSoftware\\src\\main\\java\\com\\iteso\\greenwar\\banner\\Observer.java=1587154103941
-C\:\\Users\\DELL\\Documents\\DisenoDeSoftware\\Git\\ProyectoDise-oSoftware\\src\\main\\java\\com\\iteso\\greenwar\\StartGame.java=1587157672053
+C\:\\Users\\DELL\\Documents\\DisenoDeSoftware\\Git\\ProyectoDise-oSoftware\\src\\main\\java\\com\\iteso\\greenwar\\StartGame.java=1588713808728
 C\:\\Users\\DELL\\Documents\\DisenoDeSoftware\\Git\\ProyectoDise-oSoftware\\src\\main\\java\\com\\iteso\\greenwar\\banner\\impl\\Display.java=1587154103943
 C\:\\Users\\DELL\\Documents\\DisenoDeSoftware\\Git\\ProyectoDise-oSoftware\\src\\main\\java\\com\\iteso\\greenwar\\score\\CurrentQuestion.java=1586900392884
-C\:\\Users\\DELL\\Documents\\DisenoDeSoftware\\Git\\ProyectoDise-oSoftware\\src\\main\\java\\com\\iteso\\greenwar\\score\\ScoreBoard.java=1587156844939
+C\:\\Users\\DELL\\Documents\\DisenoDeSoftware\\Git\\ProyectoDise-oSoftware\\src\\main\\java\\com\\iteso\\greenwar\\score\\ScoreBoard.java=1587158137940
 C\:\\Users\\DELL\\Documents\\DisenoDeSoftware\\Git\\ProyectoDise-oSoftware\\src\\main\\java\\com\\iteso\\greenwar\\score\\impl\\Score.java=1586902970991
 C\:\\Users\\DELL\\Documents\\DisenoDeSoftware\\Git\\ProyectoDise-oSoftware\\src\\main\\java\\com\\iteso\\greenwar\\Trash\\Impl\\Difalta.java=1587154103940
 C\:\\Users\\DELL\\Documents\\DisenoDeSoftware\\Git\\ProyectoDise-oSoftware\\src\\main\\java\\com\\iteso\\greenwar\\Trash\\Impl\\DifBasica.java=1587154103938
@@ -16,11 +16,11 @@ C\:\\Users\\DELL\\Documents\\DisenoDeSoftware\\Git\\ProyectoDise-oSoftware\\src\
 C\:\\Users\\DELL\\Documents\\DisenoDeSoftware\\Git\\ProyectoDise-oSoftware\\src\\main\\java\\com\\iteso\\greenwar\\score\\impl\\package-info.java=1586900392887
 C\:\\Users\\DELL\\Documents\\DisenoDeSoftware\\Git\\ProyectoDise-oSoftware\\src\\main\\java\\com\\iteso\\greenwar\\banner\\package-info.java=1586891398383
 C\:\\Users\\DELL\\Documents\\DisenoDeSoftware\\Git\\ProyectoDise-oSoftware\\src\\main\\java\\com\\iteso\\greenwar\\banner\\Subject.java=1586900392880
+C\:\\Users\\DELL\\Documents\\DisenoDeSoftware\\Git\\ProyectoDise-oSoftware\\src\\main\\java\\com\\iteso\\greenwar\\banner\\impl\\BannerSimpleObserver.java=1587158137939
 C\:\\Users\\DELL\\Documents\\DisenoDeSoftware\\Git\\ProyectoDise-oSoftware\\src\\main\\java\\com\\iteso\\greenwar\\score\\Player.java=1586900392885
-C\:\\Users\\DELL\\Documents\\DisenoDeSoftware\\Git\\ProyectoDise-oSoftware\\src\\main\\java\\com\\iteso\\greenwar\\banner\\impl\\BannerSimpleObserver.java=1587156074375
-C\:\\Users\\DELL\\Documents\\DisenoDeSoftware\\Git\\ProyectoDise-oSoftware\\src\\main\\java\\com\\iteso\\greenwar\\StartCurrentGameStruct.java=1587156750212
-C\:\\Users\\DELL\\Documents\\DisenoDeSoftware\\Git\\ProyectoDise-oSoftware\\src\\main\\java\\com\\iteso\\greenwar\\Trash\\Basura.java=1586891398310
+C\:\\Users\\DELL\\Documents\\DisenoDeSoftware\\Git\\ProyectoDise-oSoftware\\src\\main\\java\\com\\iteso\\greenwar\\StartCurrentGameStruct.java=1588706183090
 C\:\\Users\\DELL\\Documents\\DisenoDeSoftware\\Git\\ProyectoDise-oSoftware\\src\\main\\java\\com\\iteso\\greenwar\\Trash\\DBAnalisis.java=1587154103937
+C\:\\Users\\DELL\\Documents\\DisenoDeSoftware\\Git\\ProyectoDise-oSoftware\\src\\main\\java\\com\\iteso\\greenwar\\Trash\\Basura.java=1586891398310
 configuration*?=BB0594008D65A178E8FFECE48819DBCC269CE98C
 C\:\\Users\\DELL\\Documents\\DisenoDeSoftware\\Git\\ProyectoDise-oSoftware\\src\\main\\java\\com\\iteso\\greenwar\\StartCurrentGame.java=1586891398308
 C\:\\Users\\DELL\\Documents\\DisenoDeSoftware\\Git\\ProyectoDise-oSoftware\\src\\main\\java\\com\\iteso\\greenwar\\banner\\impl\\BannerObserver.java=1586900392881

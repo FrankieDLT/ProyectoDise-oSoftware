@@ -171,7 +171,7 @@ public class StartCurrentGameStruct {
      * @param answer Answer given
      * @return object type Basura for answer
      * */
-    private  Basura convertAnswer(final int selectionNumber, final int answer) {
+    public  Basura convertAnswer(final int selectionNumber, final int answer) {
         Basura trash = new Basura();
         switch (selectionNumber) {
             case 1:
