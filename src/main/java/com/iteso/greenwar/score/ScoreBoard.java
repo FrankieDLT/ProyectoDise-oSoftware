@@ -74,15 +74,6 @@ public abstract class ScoreBoard {
     }
 
     /**
-     * Show the score after the game has ended.
-     * @author: jortiz
-     * @version: 14/04/2020/1.0
-     */
-    public void finalScore() {
-
-    }
-
-    /**
      * List of questions.
      * @author: jortiz
      * @version: 14/04/2020/1.0

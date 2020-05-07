@@ -218,7 +218,5 @@ public class StartCurrentGameStruct {
         }
         scoreBoard.setPlayer(player);
         scoreBoard.currentScore();
-        //scoreBoard.finalScore();
-
     }
 }
