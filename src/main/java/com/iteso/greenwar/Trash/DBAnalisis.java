@@ -93,8 +93,8 @@ public class DBAnalisis {
 //               new FileReader(direcc.getPath());
 //
                 try {
-                   File direcc = new File("C:\\Desarrollo\\DD\\ProyectoDise-oSoftware\\src\\main\\java\\com\\iteso\\greenwar\\Trash\\DB.txt");
-                    //File direcc = new File("DB.txt");
+                   //File direcc = new File("C:\\Desarrollo\\DD\\ProyectoDise-oSoftware\\src\\main\\java\\com\\iteso\\greenwar\\Trash\\DB.txt");
+                    File direcc = new File("DB.txt");
                     dataBse = new BufferedReader(new InputStreamReader(new FileInputStream(direcc)));
                     //dataBse = new BufferedReader(dB);
                     // Lectura del fichero
