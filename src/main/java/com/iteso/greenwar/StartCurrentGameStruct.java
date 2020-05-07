@@ -25,7 +25,12 @@ public class StartCurrentGameStruct {
      * Timer.
      * @author Juan Carlos
      * */
-    private final int departureTime = 13;
+    private final int departureTime = 13000;
+    /***
+     * Thread for timer.
+     * @author Juan Carlos
+     */
+    private Thread timerThread;
     /**
      * Low tier dificulty quiz.
      * @author Juan Carlos
@@ -105,7 +110,7 @@ public class StartCurrentGameStruct {
         System.out.println(Messages);
     }
 
-    private  Basura convertAnswer(final int selectionNumber, final int answer) {
+    public  Basura convertAnswer(final int selectionNumber, final int answer) {
         Basura trash = new Basura();
         switch (selectionNumber) {
             case 1:
@@ -179,6 +184,7 @@ public class StartCurrentGameStruct {
     }
 
     public void starCurrentGame(int chooseQuiz, int chooseLevel,Player player) throws IOException {
+
         ScoreBoard scoreBoard;
         Dificulty dificulty;
         CurrentQuestion currentQuestion;
@@ -189,39 +195,28 @@ public class StartCurrentGameStruct {
         Scanner sc = new Scanner(System.in);
 
         for(int i=1;i<=cycle;i++) {
+             int m = 0;
+
             currentQuestion = new CurrentQuestion();
             dificulty = chooseLevel(chooseLevel);
 
             DBAnalisis t = new DBAnalisis();
-            Dificulty dif;
             Basura quest = t.selectB(new Basura());
-
-            switch(chooseLevel){
-                case 1: dif = new DifBasica();
-                        dif.setClass(quest); break;
-                case 2: dif = new DifMedia();
-                        dif.setClass(quest); break;
-                case 3:
-                        dif = new Difalta();
-                        dif.setClass(quest); break;
-                default: break;
-            }
+            dificulty.setClass(quest);
 
             System.out.println("\n\t\t\t"+ quest.getName());
-            //System.out.println("\n\t\t\t Caja de Zapatos");
-
             chooseMenuLevel(chooseLevel);
-            int m = sc.nextInt();
+
+
+            m = sc.nextInt();
             Basura trash = convertAnswer(chooseLevel,m);
 
-            //String DataText = "Org";
             boolean isHit = (trash.getClas().equals(quest.getClas()));
-            //boolean isHit = (trash.getClas().equals(DataText));
             currentQuestion.setHit(isHit);
             scoreBoard.addCurrentGameScore(currentQuestion);
-            scoreBoard.setPlayer(player);
 
         }
+        scoreBoard.setPlayer(player);
         scoreBoard.currentScore();
         //scoreBoard.finalScore();
 
