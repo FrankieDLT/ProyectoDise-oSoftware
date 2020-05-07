@@ -27,6 +27,13 @@ public abstract class ScoreBoard {
     private Player player;
 
     /**
+     * Variable with fixed
+     * value 100.
+     * @author Juan Carlos
+     * */
+    private final int hund = 100;
+
+    /**
      * Method that add the games score.
      * @author: jortiz
      * @version: 14/04/2020/1.0
@@ -48,29 +55,41 @@ public abstract class ScoreBoard {
      */
     public void currentScore() {
         int countTurns = 1, countHits = 0;
-        int marks=0;
+        int marks = 0;
         Display display = new  Display(); //Subject
         BannerSimpleObserver bannerSimpleObserver = new BannerSimpleObserver();
         display.finishRegisterRecords(bannerSimpleObserver);
 
         CurrentQuestion cQ;
 
-        for (int i=0;i < questionsCurrentGame.size();i++){
+        for (int i = 0; i < questionsCurrentGame.size(); i++) {
 
             cQ = (CurrentQuestion) questionsCurrentGame.get(i);
 
-            countHits = (cQ.isHit()== true)?countHits+1:countHits;
-            marks = (countHits * 100)/countTurns;
+            countHits = (cQ.isHit()) ? countHits + 1 : countHits;
+
+
+            marks = (countHits * hund) / countTurns;
 
             System.out.println("\tPorcentajes del juego:");
-            display.setScore(countTurns,questionsCurrentGame.size(),marks,cQ.isHit());
+            display.setScore(countTurns, questionsCurrentGame.size(),
+                    marks, cQ.isHit());
 
             countTurns++;
         }
         player.setFinalScore(marks);
-        System.out.println("\n\n\t\tFin del juego" +
-                "\n\tJugador: "+player.getNickname()+
-                "\n\tRecord: "+player.getFinalScore()+"%");
+        System.out.println("\n\n\t\tFin del juego"
+               + "\n\tJugador: " + player.getNickname()
+               + "\n\tRecord: " + player.getFinalScore() + "%");
+    }
+
+    /**
+     * Show the score after the game has ended.
+     * @author: jortiz
+     * @version: 14/04/2020/1.0
+     */
+    public void finalScore() {
+
     }
 
     /**

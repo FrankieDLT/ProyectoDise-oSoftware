@@ -46,7 +46,7 @@ public class BannerSimpleObserver implements Observer {
 
         String scoredBoard = "";
             scoredBoard += "\n\t\tTurno: " + turnIs
-                    + "\tAcierto: " + isHit + "\tPromedio: " + markIs+"%";
+                    + "\tAcierto: " + isHit + "\tPromedio: " + markIs + "%";
 
         System.out.println(scoredBoard);
     }
