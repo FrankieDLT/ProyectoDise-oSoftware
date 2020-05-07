@@ -293,16 +293,7 @@ public class StartCurrentGameStruct {
             Dificulty dif;
             Basura quest = t.selectB(new Basura());
 
-            switch (chooseLevel) {
-                case 1: dif = new DifBasica();
-                        dif.setClass(quest); break;
-                case 2: dif = new DifMedia();
-                        dif.setClass(quest); break;
-                case three:
-                        dif = new Difalta();
-                        dif.setClass(quest); break;
-                default: break;
-            }
+            dificulty.setClass(quest);
 
             System.out.println("\n\t\t\t" + quest.getName());
             //System.out.println("\n\t\t\t Caja de Zapatos");
