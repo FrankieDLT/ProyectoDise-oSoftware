@@ -1,6 +1,8 @@
 package com.iteso.greenwar.Trash;
 
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Random;
@@ -85,22 +87,26 @@ public class DBAnalisis {
          *
          * @author Francisco De La Torre
          */
-
+        //Comentar para funcionalidad con Juan Ca
        URL direcc = getClass().getResource("DB.txt");
-
+        //Comentar para funcionalidad con Juan Ca
        FileReader dB =
                new FileReader(direcc.getPath());
 
                 try {
-                   //File direcc = new File("C:\\Desarrollo\\DD\\ProyectoDise-oSoftware\\src\\main\\java\\com\\iteso\\greenwar\\Trash\\DB.txt");
+                   //File direcc = new File("C:\\Desarrollo
+                    // \\DD\\ProyectoDise-oSoftware\\src\\main
+                    // \\java\\com\\iteso\\greenwar\\Trash\\DB.txt");
                     //File direcc = new File("DB.txt");
-                    //dataBse = new BufferedReader(new InputStreamReader(new FileInputStream(direcc)));
+                    //dataBse = new BufferedReader(
+                    // new InputStreamReader(new FileInputStream(direcc)));
                     dataBse = new BufferedReader(dB);
                     // Lectura del fichero
                     while ((linea = dataBse.readLine()) != null) {
                         list.add(linea);
                     }
 
+                    //Comentar para funcionalidad con Juan Ca
                     dataBse.close();
                 } catch (Exception e) {
                     e.printStackTrace();
