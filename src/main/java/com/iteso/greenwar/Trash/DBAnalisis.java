@@ -1,8 +1,6 @@
 package com.iteso.greenwar.Trash;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Random;
@@ -87,22 +85,29 @@ public class DBAnalisis {
          *
          * @author Francisco De La Torre
          */
-        URL direcc = getClass().getResource("DB.txt");
-        FileReader dB =
-                new FileReader(direcc.getPath());
 
+//        URL direcc = getClass().getResource("C:\\\\Desarrollo\\\\DD\\\\ProyectoDise-oSoftware\\\\src\\\\main\\\\java\\\\com\\\\iteso\\\\greenwar\\\\Trash\\\\DB.txt");
+//        System.out.println(direcc.getPath());
+
+//        FileReader dB =
+//               new FileReader(direcc.getPath());
+//
                 try {
-
-                    dataBse = new BufferedReader(dB);
+                   //File direcc = new File("C:\\Desarrollo\\DD\\ProyectoDise-oSoftware\\src\\main\\java\\com\\iteso\\greenwar\\Trash\\DB.txt");
+                    File direcc = new File("DB.txt");
+                    dataBse = new BufferedReader(new InputStreamReader(new FileInputStream(direcc)));
+                    //dataBse = new BufferedReader(dB);
                     // Lectura del fichero
                     while ((linea = dataBse.readLine()) != null) {
                         list.add(linea);
                     }
+
+                    dataBse.close();
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
 
-                dB.close();
+                //dB.close();
         /**
          * Arreglo con el que se trabajan y separan
          * los datos.
