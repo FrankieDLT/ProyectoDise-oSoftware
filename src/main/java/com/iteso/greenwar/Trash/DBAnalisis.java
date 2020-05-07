@@ -86,17 +86,16 @@ public class DBAnalisis {
          * @author Francisco De La Torre
          */
 
-//        URL direcc = getClass().getResource("C:\\\\Desarrollo\\\\DD\\\\ProyectoDise-oSoftware\\\\src\\\\main\\\\java\\\\com\\\\iteso\\\\greenwar\\\\Trash\\\\DB.txt");
-//        System.out.println(direcc.getPath());
+       URL direcc = getClass().getResource("DB.txt");
 
-//        FileReader dB =
-//               new FileReader(direcc.getPath());
-//
+       FileReader dB =
+               new FileReader(direcc.getPath());
+
                 try {
                    //File direcc = new File("C:\\Desarrollo\\DD\\ProyectoDise-oSoftware\\src\\main\\java\\com\\iteso\\greenwar\\Trash\\DB.txt");
-                    File direcc = new File("DB.txt");
-                    dataBse = new BufferedReader(new InputStreamReader(new FileInputStream(direcc)));
-                    //dataBse = new BufferedReader(dB);
+                    //File direcc = new File("DB.txt");
+                    //dataBse = new BufferedReader(new InputStreamReader(new FileInputStream(direcc)));
+                    dataBse = new BufferedReader(dB);
                     // Lectura del fichero
                     while ((linea = dataBse.readLine()) != null) {
                         list.add(linea);
